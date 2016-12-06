@@ -40,4 +40,9 @@ node('iOS Node') {
             step([$class: 'CheckStylePublisher', canComputeNew: false, defaultEncoding: '', healthy: '', pattern: 'checkstyle.xml', unHealthy: ''])
         }, failFast: true|false   
     }
+
+    stage ('Notify') {
+        
+        slackSend channel: '#my-team', message: 'Time Table - Successfully', teamDomain: 'my-team', token: 'my-token'
+    }
 }
