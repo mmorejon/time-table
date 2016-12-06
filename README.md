@@ -208,6 +208,18 @@ The <a target="_blank" href="https://wiki.jenkins-ci.org/display/JENKINS/Checkst
 **You must have installed** <a target="_blank" href="https://wiki.jenkins-ci.org/display/JENKINS/Checkstyle+Plugin">Checkstyle Plugin</a> to show SwiftLint reports.
 <br><br>
 
+Send Slack notification
+
+```
+// Send slack notification
+slackSend channel: '#my-team', message: 'Time Table - Successfully', teamDomain: 'my-team', token: 'my-token'
+```
+
+The <a target="_blank" href="https://wiki.jenkins-ci.org/display/JENKINS/Slack+Plugin">Slack Notification Plugin</a> is used to send notifications to channel team. The plugin must be configured according to Slack account and channel team. The values you need setup are `channel`, `message`, `teamDomain` and `token`.
+
+You must have installed <a target="_blank" href="https://wiki.jenkins-ci.org/display/JENKINS/Slack+Plugin">Slack Notification Plugin</a> to send notifications.
+<br><br>
+
 ## Setting up Jenkins job
 
 Create new Job
@@ -226,3 +238,7 @@ The **Pipeline** configuration must be the same like the following image:
 Branch Specifier: master
      Script Path: Jenkinsfile
 ```
+
+## Conclusion
+
+Now you know how to write your own CI/CD process using Pipeline Modules in Jenkins 2.0. It's your turn to build the  Jenkinsfile  that needs your team.
