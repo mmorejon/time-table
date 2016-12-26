@@ -40,7 +40,7 @@ class TimeTableTests: XCTestCase {
         
         self.measure {
             // Put the code you want to measure the time of here.
-            timeTable.multiply(20000, b: 20000)
+            _ = timeTable.multiply(20000, b: 20000)
         }
     }
     
