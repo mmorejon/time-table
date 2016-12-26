@@ -1,6 +1,6 @@
 # Time Table
 
-Now you can define **Continuous Integration** and **Continuous Delivery** (CI/CD) process as code with **Jenkins 2.0** for your projects in **iOS 9**. Activities like **build**, **test**, **code coverage**, **check style**, **reports** and **notifications** can be described in only one file.
+Now you can define **Continuous Integration** and **Continuous Delivery** (CI/CD) process as code with **Jenkins 2.0** for your projects in **iOS 10**. Activities like **build**, **test**, **code coverage**, **check style**, **reports** and **notifications** can be described in only one file.
 
 ### What is the idea?
 
@@ -20,7 +20,7 @@ The source code can be <a target="_blank" href="https://github.com/mmorejon/time
 
 ## Setting Up Jenkinsfile
 
-The following lines will show what do you need to include in your iOS9 project to setting up the pipeline. First of all, create a new file with the name `Jenkinsfile` in the project root and after add the code behind to `Jenkinsfile` archive. It is simple, right?
+The following lines will show what do you need to include in your iOS 10 project to setting up the pipeline. First of all, create a new file with the name `Jenkinsfile` in the project root and after add the code behind to `Jenkinsfile` archive. It is simple, right?
 
 ```
 node('iOS Node') {
@@ -40,7 +40,7 @@ node('iOS Node') {
         ])
 
         // Build and Test
-        sh 'xcodebuild -scheme "TimeTable" -configuration "Debug" build test -destination "platform=iOS Simulator,name=iPhone 6,OS=9.3" -enableCodeCoverage YES | /usr/local/bin/xcpretty -r junit'
+        sh 'xcodebuild -scheme "TimeTable" -configuration "Debug" build test -destination "platform=iOS Simulator,name=iPhone 6,OS=10.1" -enableCodeCoverage YES | /usr/local/bin/xcpretty -r junit'
 
         // Publish test restults.
         step([$class: 'JUnitResultArchiver', allowEmptyResults: true, testResults: 'build/reports/junit.xml'])
@@ -84,7 +84,7 @@ node('iOS Node') {
 }
 ```
 
-The Jenkins node must have installed **Mac OS** with **XCode7**.
+The Jenkins node must have installed **Mac OS** with **XCode 8**.
 <br><br>
 
 Task definitions
@@ -138,7 +138,7 @@ Build and test
 
 ```
 // Build and Test
-sh 'xcodebuild -scheme "TimeTable" -configuration "Debug" build test -destination "platform=iOS Simulator,name=iPhone 6,OS=9.3" -enableCodeCoverage YES | /usr/local/bin/xcpretty -r junit'
+sh 'xcodebuild -scheme "TimeTable" -configuration "Debug" build test -destination "platform=iOS Simulator,name=iPhone 6,OS=10.1" -enableCodeCoverage YES | /usr/local/bin/xcpretty -r junit'
 ```
 
 The project is compiled using `xcodebuild` tool. Parameters like `scheme`, `configuration` and `destination` must be setting up depending of the project information.
