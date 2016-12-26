@@ -9,7 +9,7 @@
 import Foundation
 
 class TimeTable {
-    func multiply (a: Int, b: Int) -> Int {
+    func multiply (_ a: Int, b: Int) -> Int {
         var ans = 0
         
         for _ in 0 ..< a {

@@ -38,7 +38,7 @@ class TimeTableTests: XCTestCase {
         // This is an example of a performance test case.
         let timeTable = TimeTable()
         
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
             timeTable.multiply(20000, b: 20000)
         }
